@@ -1,7 +1,6 @@
 document.querySelectorAll(".linksNav li a").forEach(function(item) {
     item.addEventListener("mouseover", function() {
         // Quando o hover é ativado, adiciona uma classe 'not-hover' a todos os outros itens
-        console.log('aaa')
         document.querySelectorAll(".linksNav a").forEach(function(otherItem) {
             if (otherItem !== item) {
                 otherItem.classList.add("notHover");
