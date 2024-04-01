@@ -68,12 +68,16 @@ nav{
     font-size: 1.5em;
     width: 100%;
     text-align: center;
+    transition: 0.2s;
 }
 
 .linksNav img{
     width: 100%;
 }
-
+.notHover {
+    opacity: 0.6;
+    transition: 0.5s;
+    }
 /*Fim nav*/
 
 #banner{
