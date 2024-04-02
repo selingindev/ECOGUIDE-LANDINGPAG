@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
     <title>Document</title>
     <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Scripts do Bootstrap (jQuery e Popper.js) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </head>
 <body>
     <nav>
@@ -35,12 +41,60 @@
                 <p></p>
             </div>
             <div class="imgReciclagem">
-                <img src="" alt="">
+                <img src="src/img/descate_ilustra.png" alt="">
             </div>
         </div>
         <div class="sobreResiduos">
 
         </div>
+
+        <form >
+            <div class="mb-3">
+                <label for="cep" class="form-label"><b> CEP: </b></label>
+                <input type="text" name="cep" class="form-control" id="cep" placeholder="Insira o CEP de onde será realizada a coleta" maxlength="9" required>
+            </div>
+            <div class="mb-3">
+                <label for="quant_resid" class="form-label"><b> Quantidade de resíduos a serem descartados: </b></label>
+                <input type="number" name="quant_resid" class="form-control" id="quant_resid" placeholder="Insira a quantidade de resíduos" maxlength="9" max="99999" required>
+            </div>
+            <div class="mb-3">
+                <label for="data_coleta" class="form-label"><b> Dia da coleta: </b></label>
+                <input type="date" name="data_coleta" class="form-control" id="data_coleta" required>
+            </div>
+            <div class="mb-3">
+                <label for="categoria" class="form-label"><b> Categoria do resíduo: </b> <br> <i> Consulte o chatbot caso tenha dúvida em relação a categoria </i></label>
+                <div class="container">
+                    <label title="Exemplo: baterias, celulares, cabos e computadores."> Azul
+                        <input type="checkbox" name="cat_azul" value="1">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <div class="container">
+                    <label title="Exemplo: televisores e acessórios de áudio."> Vermelho
+                        <input type="checkbox" name="cat_vermelho" value="1">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <div class="container">
+                    <label title="Exemplo: eletrodomésticos."> Amarelo
+                        <input type="checkbox" name="cat_amarelo" value="1">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <div class="container">
+                    <label title="Outros."> Branco
+                        <input type="checkbox" name="cat_branco" value="1">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>           
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+        
     </section>
 <script src="src/scripts/btnResponsivo.js"></script>    
 <script src="src/scripts/efeitoNav.js"></script>
