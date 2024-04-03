@@ -444,14 +444,14 @@ footer{
     width: 40%;
 }
 .sobreResiduos{
-    height: 80%;
+    height: 55%;
 }
 .carousel-inner img {
     height: 50vh;
     width: 80vw;
 }
 }
-/* Muito pequeno (para smartphones em modo retrato, 425px - 575px) */
+
 @media (max-width: 575.98px) {
     nav{
         height:10vh;
@@ -493,7 +493,7 @@ footer{
 
 .sobreResiduos{
     display: block;
-    height: 900px;
+    height: 1000px;
 }
 .infoReciclagem{
     width: 100%;
