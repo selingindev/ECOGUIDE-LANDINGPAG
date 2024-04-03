@@ -10,10 +10,29 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
 </head>
 <body>
-    <nav>
+    <script>
+        window.addEventListener('mouseover', initLandbot, { once: true });
+        window.addEventListener('touchstart', initLandbot, { once: true });
+        var myLandbot;
+        function initLandbot() {
+          if (!myLandbot) {
+            var s = document.createElement('script');s.type = 'text/javascript';s.async = true;
+            s.addEventListener('load', function() {
+              myLandbot = new Landbot.Popup({
+                configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-1667423-Q398F7MJ4J1KXVRK/index.json',
+              });
+            });
+            s.src = 'https://cdn.landbot.io/landbot-3/landbot-3.0.0.js';
+            var x = document.getElementsByTagName('script')[0];
+            x.parentNode.insertBefore(s, x);
+          }
+        }
+      </script>
+    <nav id="home">
         <div class="mobileNav">
                    <div class="logoResponsiva">
                     <a href=""><img src="src/img/logo_white.png" alt="Nome Website - ECOGUIDE"></a>
@@ -25,9 +44,9 @@
             </div>
         </div>    
         <ul class="linksNav">
-           <li><a href="">SOBRE</a></li>
-           <li><a href="">HOME</a></li>
-           <li id="image"><a href=""><img src="src/img/logo_white.png" alt="Nome Website - ECOGUIDE"></a></li>
+           <li><a href="#sobre">SOBRE</a></li>
+           <li><a href="#home">HOME</a></li>
+           <li id="image"><img src="src/img/logo_white.png" alt="Nome Website - ECOGUIDE"></li>
            <li><a href="">COLETA</a></li>
            <li><a href="">LOGIN</a></li>
         </ul>
@@ -38,64 +57,93 @@
     <section id="sobre">
         <div class="sobreEcoguide">
             <div class="infoEcoguide">
-                <p></p>
+                <h1>Olá, somos a <span style="color: #035950;">ECOGUIDE</span> e temos o sonho de tornar o mundo um lugar mais sustentável e prospero por meio da coleta de resíduos eletrônicos!!!</h1> <p>Com a venda e a aplicação da lógistica reversa, faremos que a extração da matéria prima não seja necessária, assim evitando danos ao meio ambiente e consequentemente inovando os meios de produção de maneira sustentável. Por meio de um formúlario rápido, você recícla fácil!</p>
             </div>
-            <div class="imgReciclagem">
-                <img src="src/img/descate_ilustra.png" alt="">
+            <div class="imgSobre">
+                <img src="src/img/home_intro.png" alt="Pessoas plantando arvóres, reciclando e uma regando o planeta terra">
             </div>
         </div>
+
         <div class="sobreResiduos">
+                <div class="imgReciclagem">
+                    <img src="src/img/descate_ilustra.png" alt="">
+                </div>        
 
+                <div class="infoReciclagem">
+                    <p>
+                        Resíduos eletrônicos estão entre os tipos de resíduos que mais crescem em todo o mundo, com um aumento anual de cerca de 4%. Esse crescimento acelerado representa um desafio significativo, uma vez que os componentes químicos presentes nesses resíduos podem contaminar o solo e a água, causando danos ambientais graves.
+                        
+                        O descarte inadequado de resíduos eletrônicos não apenas prejudica o meio ambiente, mas também resulta em desperdício, uma vez que muitos desses materiais podem ser reciclados e reutilizados.</p>
+                         <!-- Button trigger modal -->
+                <div class="divButton">        
+                <button type="button" class="btn btn-success" id="btnModal" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    RECICLE AGORA!
+                </button>
+            </div> 
+                
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Formulário de Coleta</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                            <form id="formsColeta">
+                                <div class="mb-3">
+                                    <label for="cep" class="form-label"><b>CEP:</b></label>
+                                    <input type="text" name="cep" class="form-control" id="cep" placeholder="Insira o CEP de onde será realizada a coleta" maxlength="9" minlength="9" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="quant_resid" class="form-label"><b>Quantidade de resíduos a serem descartados:</b></label>
+                                    <input type="number" name="quant_resid" class="form-control" id="quant_resid" placeholder="Insira a quantidade de resíduos" maxlength="9" max="99999" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="data_coleta" class="form-label"><b>Dia da coleta:</b></label>
+                                    <input type="date" name="data_coleta" class="form-control" id="data_coleta" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="categoria" class="form-label"><b>Categoria do resíduo:</b> <br> <i>Consulte o chatbot caso tenha dúvida em relação a categoria</i></label>
+                                    <div class="container">
+                                        <label title="Exemplo: baterias, celulares, cabos e computadores.">Azul
+                                            <input type="checkbox" name="cat_azul" value="1">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                    <div class="container">
+                                        <label title="Exemplo: televisores e acessórios de áudio.">Vermelho
+                                            <input type="checkbox" name="cat_vermelho" value="1">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                    <div class="container">
+                                        <label title="Exemplo: eletrodomésticos.">Amarelo
+                                            <input type="checkbox" name="cat_amarelo" value="1">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                    <div class="container">
+                                        <label title="Outros.">Branco
+                                            <input type="checkbox" name="cat_branco" value="1">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>           
+                                </div>
+                                <button id="submitModal" type="submit" class="btn btn-success">Enviar</button>
+                            </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
         </div>
-
-        <form >
-            <div class="mb-3">
-                <label for="cep" class="form-label"><b> CEP: </b></label>
-                <input type="text" name="cep" class="form-control" id="cep" placeholder="Insira o CEP de onde será realizada a coleta" maxlength="9" required>
-            </div>
-            <div class="mb-3">
-                <label for="quant_resid" class="form-label"><b> Quantidade de resíduos a serem descartados: </b></label>
-                <input type="number" name="quant_resid" class="form-control" id="quant_resid" placeholder="Insira a quantidade de resíduos" maxlength="9" max="99999" required>
-            </div>
-            <div class="mb-3">
-                <label for="data_coleta" class="form-label"><b> Dia da coleta: </b></label>
-                <input type="date" name="data_coleta" class="form-control" id="data_coleta" required>
-            </div>
-            <div class="mb-3">
-                <label for="categoria" class="form-label"><b> Categoria do resíduo: </b> <br> <i> Consulte o chatbot caso tenha dúvida em relação a categoria </i></label>
-                <div class="container">
-                    <label title="Exemplo: baterias, celulares, cabos e computadores."> Azul
-                        <input type="checkbox" name="cat_azul" value="1">
-                        <span class="checkmark"></span>
-                    </label>
-                </div>
-                <div class="container">
-                    <label title="Exemplo: televisores e acessórios de áudio."> Vermelho
-                        <input type="checkbox" name="cat_vermelho" value="1">
-                        <span class="checkmark"></span>
-                    </label>
-                </div>
-                <div class="container">
-                    <label title="Exemplo: eletrodomésticos."> Amarelo
-                        <input type="checkbox" name="cat_amarelo" value="1">
-                        <span class="checkmark"></span>
-                    </label>
-                </div>
-                <div class="container">
-                    <label title="Outros."> Branco
-                        <input type="checkbox" name="cat_branco" value="1">
-                        <span class="checkmark"></span>
-                    </label>
-                </div>           
-            </div>
-            <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-            </div>
-            <button type="submit" class="btn btn-success">Submit</button>
-        </form>
-        
     </section>
+   
+    <footer>
+        <p class="copy"> &copy; 2023 Ecoguide. Todos os direitos reservados.</p>
+    </footer>
+<script src="src/scripts/submitModal.js"></script>
 <script src="src/scripts/btnResponsivo.js"></script>    
 <script src="src/scripts/efeitoNav.js"></script>
 </body>
