@@ -226,7 +226,21 @@ nav{
     text-align: center;
 }
 /*Fim Sobre o Projeto*/
+.carousel{
+    margin: 3em 0
+}
+.carousel-inner{
+    text-align: center;
+}
+.carousel-inner img {
+    height: 50vh;
+    width: 60vw;
+}
 
+.container{
+    width: 100%!important;
+    padding: 0!important;
+}
 /* Estilização footer*/
 
 footer{
@@ -395,7 +409,7 @@ footer{
 }
   }  
   /* Pequeno (para smartphones em modo paisagem ou tablets, 576px - 767px) */
-  @media(max-width: 767.98px) {
+  @media(max-width: 768px) {
     nav{
         height: 15vh;
     }
@@ -428,6 +442,13 @@ footer{
 #btnModal{
     font-size: 1.0em;
     width: 40%;
+}
+.sobreResiduos{
+    height: 55%;
+}
+.carousel-inner img {
+    height: 50vh;
+    width: 80vw;
 }
 }
 /* Muito pequeno (para smartphones em modo retrato, 425px - 575px) */
@@ -472,7 +493,7 @@ footer{
 
 .sobreResiduos{
     display: block;
-    height: 800px;
+    height: 900px;
 }
 .infoReciclagem{
     width: 100%;
@@ -488,7 +509,8 @@ footer{
 .infoText{
     width: 100%;
     text-align: center;
-    height: 60vh;
+    height: 80vh;
+    margin-top: 5em;
 }
 .infoText p{
     width: 100%;
@@ -499,6 +521,27 @@ footer{
     width: 40%;
 }
 } 
+@media (max-width: 376px){
+    .sobre{
+        height: 1200px;
+    }
+    .sobreResiduos{
+        height: 1000px;
+    }
+    .infoReciclagem{
+        margin-top: 3em;
+        justify-content:center;
+    }
+    .infoText{
+        margin-top: 2em;
+    }
+    .infoText p{
+        font-size: 1.1em;
+    }
+    .carousel-inner img {
+        height: 40vh;
+        width: 80vw;
+}
   /* Extra pequeno (para smartphones em modo retrato, menos de 425px) */
   @media (max-width: 320px) {
     nav{
@@ -525,7 +568,7 @@ footer{
     
     .sobreResiduos{
         display: block;
-        height: 880px;
+        height: 920px;
     }
     .infoReciclagem{
         width: 100%;
@@ -544,6 +587,7 @@ footer{
     .infoText p{
         width: 100%;
         height: 100%;
+        font-size: 1em;
     }
     #btnModal{
         width: 80%;
