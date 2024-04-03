@@ -469,7 +469,7 @@ footer{
     top: 10vh;
 }
 #sobre{
-    height: 1500px;
+    height: 1700px;
 }
 .sobreEcoguide{
     display: block;
@@ -519,6 +519,13 @@ footer{
 #btnModal{
     font-size: 1.0em;
     width: 40%;
+}
+.imgReciclagem{
+    height: 30%;
+}
+.carousel-inner img {
+    height: 30vh;
+    width: 80vw;
 }
 } 
 @media (max-width: 376px){
