@@ -227,7 +227,7 @@ nav{
 }
 /*Fim Sobre o Projeto*/
 .carousel{
-    margin: 3em 0
+    margin: 10em 0
 }
 .carousel-inner{
     text-align: center;
@@ -523,10 +523,10 @@ footer{
 } 
 @media (max-width: 376px){
     .sobre{
-        height: 1200px;
+        height: 1800px;
     }
     .sobreResiduos{
-        height: 1000px;
+        height: 200%;
     }
     .infoReciclagem{
         margin-top: 3em;
@@ -539,7 +539,7 @@ footer{
         font-size: 1.1em;
     }
     .carousel-inner img {
-        height: 40vh;
+        height: 30vh;
         width: 80vw;
 }
 }
