@@ -542,6 +542,7 @@ footer{
         height: 40vh;
         width: 80vw;
 }
+}
   /* Extra pequeno (para smartphones em modo retrato, menos de 425px) */
   @media (max-width: 320px) {
     nav{
